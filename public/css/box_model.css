@@ -1,0 +1,131 @@
+	
+
+		#container {
+            margin: 50px auto;
+            width: 400px;
+            height: 300px;
+           
+            
+            position: relative;
+            /* position: relative; */
+
+        }
+        #container2 {
+        	margin: 50px auto;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+        
+		
+        #box1 {
+            background-color: #77AF00; /* greenish */
+            height: 100px;
+            float: right;
+            width: 100px;
+            margin: 10px;
+        }
+        #box2 {
+            background-color: #1969B2; /* blueish */
+            height: 150px;
+            width: 150px;
+            position: relative;
+            float: left;
+            margin: 10px;
+        }
+        #box3 {
+        	background-color: orange; /* orangeish */
+        	height: 150px;
+        	width: 150px;
+        	margin: 10px;
+        }
+
+        p {
+        	clear:right
+        }
+    
+
+	.red {
+		font-size: 1em;
+		padding: 10px;
+		border: 1px solid black;
+		color:white;
+		background-color: red;
+	}
+	div {
+		width: 150px;
+		height: 50px;
+	}
+	.orange {
+		font-size: 1em;
+		padding: 10px;
+		margin:10px;
+		border: 1px solid black;
+		margin-left: 30px;
+		color:white;
+		background-color: orange;
+	}
+	div {
+		width: 150px;
+		height: 50px;
+	}
+
+	.yellow {
+		font-size: 1em;
+		padding: 10px;
+		margin:10px;
+		border: 1px solid black;
+		margin-left: 60px;
+		color:white;
+		background-color: yellow;
+	}
+	div {
+		width: 150px;
+		height: 50px;
+	}
+	.green {
+		font-size: 1em;
+		padding: 10px;
+		margin:10px;
+		border: 1px solid black;
+		margin-left: 90px;
+		color:white;
+		background-color: green;
+	}
+	div {
+		width: 150px;
+		height: 50px;
+	}
+	.blue {
+		font-size: 1em;
+		padding: 10px;
+		margin:10px;
+		border: 1px solid black;
+		margin-left: 120px;
+		color:white;
+		background-color: blue;
+	}
+	div {
+		width: 150px;
+		height: 50px;
+	}
+	.purple{
+		font-size: 1em;
+		padding: 10px;
+		margin:10px;
+		border: 1px solid black;
+		margin-left: 150px;
+		color:white;
+		background-color: purple;
+	}
+	div {
+		width: 150px;
+		height: 50px;
+	}
+
+
+	
+
+
+
+ 

@@ -1,0 +1,46 @@
+.box {
+		width: 50px;
+		height: 50px;
+		padding: 10px;
+		margin:0 50px 50px 0;
+		float: left;
+		border: 1px solid black;
+		color: white;
+		
+	} 
+	h1 {
+		margin-bottom: 50px
+	}
+	.box img {
+		position: relative;
+		bottom: 80px;
+		left: 40px;
+	}
+
+		.title {
+			color: purple;
+			text-decoration: underline;
+			margin: 50px;
+		}
+		.newred {
+			background-color: red;
+			clear:left;
+			
+		}
+		.neworange {
+			background-color: orange;
+		}
+		.newyellow {
+			background-color: yellow;
+		}
+		.newgreen {
+			background-color: green;
+			clear: left;
+		
+		}
+		.newblue {
+			background-color: blue;
+		}
+		.newpurple {
+			background-color: pink;
+		}

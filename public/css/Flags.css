@@ -1,0 +1,198 @@
+
+
+	.box {
+		height: 300px;
+		width: 500px;
+		padding:10px;
+		border: 2px solid;
+		position: relative;
+	}
+	.flag {
+		color: white;
+		height:150px;
+		width:300px;
+	}
+	
+	
+	.circle {
+		width:170px;
+		height:170px;
+		border-radius: 50%;
+		background-color: red;
+		position: relative;
+		top: 65px;
+		left: 155px;
+
+	}
+
+
+	.box2 {
+		height: 300px;
+		width: 500px;
+		padding:10px;
+		border: 2px solid;
+		position: relative;
+		background-color: red;
+	}
+.triangle {
+	width:0;
+	height:0;
+	position: relative;
+
+}
+.triangle.right {
+	border-top: 160px solid transparent;
+	border-left: 260px solid limegreen;
+	border-bottom: 160px solid transparent;
+	right: 10px;
+	bottom: 10px;
+}
+.triangle.left {
+	border-top: 160px solid transparent;
+	border-right: 270px solid limegreen;
+	border-bottom: 160px solid transparent;
+	bottom: 330px;
+	right:-240px;
+	
+}
+.circle2 {
+		width:170px;
+		height:170px;
+		border-radius: 50%;
+		background-color: white;
+		position: relative;
+		bottom: 570px;
+		right: -155px;
+}
+
+.star-six {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 30px solid limegreen;
+	position: relative;
+	top:22px;
+	left:68px;
+}
+.star-six:after {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid limegreen;
+	position: absolute;
+	content: "";
+	top: 9px;
+	left: -15px;
+}
+
+	.star-red {
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 24px solid red;
+	position: relative;
+	top:-4px;
+	left:71px;
+}
+.star-red:after {
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 24px solid red;
+	position: absolute;
+	content: "";
+	top: 8px;
+	left: -12px;
+}
+
+.star-2 {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 30px solid limegreen;
+	position: relative;
+	top:35px;
+	left:30px;
+}
+.star-2:after {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid limegreen;
+	position: absolute;
+	content: "";
+	top: 9px;
+	left: -15px;
+}
+
+	.star-2red {
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 24px solid red;
+	position: relative;
+	top:9px;
+	left:33px;
+}
+.star-2red:after {
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 24px solid red;
+	position: absolute;
+	content: "";
+	top: 8px;
+	left: -12px;
+}
+			
+			.star-3 {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 30px solid limegreen;
+	position: relative;
+	top:-20px;
+	left:110px;
+}
+.star-3:after {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid limegreen;
+	position: absolute;
+	content: "";
+	top: 9px;
+	left: -15px;
+}
+
+	.star-3red {
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 24px solid red;
+	position: relative;
+	top:-46px;
+	left:113px;
+}
+.star-3red:after {
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 24px solid red;
+	position: absolute;
+	content: "";
+	top: 8px;
+	left: -12px;
+}	

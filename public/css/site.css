@@ -1,0 +1,97 @@
+
+		.blue {
+            color: mediumslateblue;
+        }
+
+
+        .fancy-bean {
+            color: limegreen;
+            text-decoration: underline;
+        }
+        
+        .red {
+            color:red;
+        }
+        .extra-large {
+        	font-size: 25px;
+        }
+
+    
+
+    #main-header {
+    	color: blue;
+    }
+
+
+   /*
+
+   Pattern of style
+   selector {
+    property1: value1;
+    property2: value2;
+   }
+
+   */
+
+   /*
+   unvisited link (:link) */
+        a:link {
+        color:blue;
+    }
+    /* visited link (:link) */
+        a:visited {
+            color:purple;
+        }
+    /* mouse hover over link (:hover) */
+        a:hover {
+            color:coral;
+        }
+    /* active/selected link (:active) */
+        a:active {
+            color:green;
+        }
+
+   body {
+        background-color: papayawhip;
+
+   }
+    		
+   main{
+        background-color: transparent;
+   }
+  
+
+   
+   body {
+    font-family: oblique;
+   }
+   h1 {
+    text-decoration: overline underline; 
+   }
+   
+
+   #wrapper {
+        background-color: gray;
+        max-width: 1450px;
+   }
+   body {
+    background-image: url("/img/srt1.jpg");
+    background-size: 100%, 100%, contain;
+    background-repeat: no-repeat;
+    background-color:(192,192,192,0.3);
+        }
+
+
+  
+    ul{
+        list-style: square;
+    }
+    .table {
+        font-size: 2em;
+        padding: 50px;
+        border: 2px solid black;
+        border-style: groove;
+    }
+   
+
+   
