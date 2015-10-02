@@ -1,7 +1,7 @@
 
 
 	.box {
-		height: 300px;
+		height: 325px;
 		width: 500px;
 		padding:10px;
 		border: 2px solid;
@@ -23,6 +23,20 @@
 		top: 65px;
 		left: 155px;
 
+	}
+	.rectangle {
+		width: 500px;
+		height: 60px;
+		background-color: blue;
+		position:relative;
+		bottom:-20px;
+	}
+	.rectangle2 {
+		width: 500px;
+		height: 60px;
+		background-color: blue;
+		position:absolute;
+		bottom:30px;
 	}
 
 
