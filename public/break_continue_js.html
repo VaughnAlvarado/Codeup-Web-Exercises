@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Break Continue</title>
+</head>
+<body>
+
+	<script>
+	
+	do {
+		var random = Math.floor((Math.random()*50)+1);
+		if (random % 2 !== 0) {
+		console.log(random + ' is odd');
+		break;
+		}
+	console.log('random was even. generating new number')
+} while (random % 2 == 0);
+	
+	console.log('Random odd number to skip is: ' + random);
+
+	for (var i = 1; i < 50; i+=2 ) {
+	    if (random == i) {
+	   	console.log('Yikes! skipping number ' + i);
+	    continue;
+
+	    }
+	    	console.log('Here is a odd number: ' + i);
+	}
+    
+  
+
+
+	</script>
+
+</body>
+</html>
