@@ -6,15 +6,63 @@
 <body>
 	<script>
 	
-	var i = 2;
+var random = Math.floor((Math.random()*10)+1);
+console.log(random);
+var response3 = prompt('Guess a number 1-10')
+console.log(response3);
+while(response3 != random) {
+	
+	if(response3 > random) {
+		alert('Too high!');
+	}else if(response3 < random) {
+		alert('Too Low');
+	}
+	response3 = prompt('Guess a number 1-10');
+	console.log(response3);
+		} 
 
-while (i <= 70000) {
-	console.log('while loop iteration #' + i);
-	i = i * 2;
-}
+alert('You Are Correct!!');
 
 
-console.log('message');
+//random = //
+//do{}
+	//response()
+//if(parseInt('response')); {
+	//handle your number
+	//...
+//}else {
+	// response= alert('please make sure its a number')
+//}
+
+
+
+
+
+
+//var response = prompt('Enter Your Name')	
+	//while(response == ''){
+		 //response = prompt('Enter Your Name')
+	//}
+
+	//alert('Welcome ' + response);
+
+	//var response2 = prompt('Do You like Pizza?')
+		//if (response2 == 'yes') {
+			//alert('Congratulations!')
+		//}else if (response2== 'no') {
+			//alert('You are a Failure')
+		//}else {
+			//alert('Try Again')
+		//}
+
+	
+	
+
+		
+
+
+
+
 
 </script>
 

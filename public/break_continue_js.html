@@ -6,7 +6,7 @@
 <body>
 
 	<script>
-	
+	<div>
 	do {
 		var random = Math.floor((Math.random()*50)+1);
 		if (random % 2 !== 0) {
@@ -27,7 +27,17 @@
 	    	console.log('Here is a odd number: ' + i);
 	}
     
-  
+  </div>
+
+
+  for(var i = 9; i <= 10; i++) {
+		
+		for(var j = 0; j <= 10; j++) {
+			console.log(i * j);
+			console.log('inner loop');
+		}
+		console.log('outer loop');
+
 
 
 	</script>

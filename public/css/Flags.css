@@ -210,3 +210,54 @@
 	top: 8px;
 	left: -12px;
 }	
+
+#hexagon {
+	width: 100px;
+	height: 55px;
+	background: red;
+	position: relative;
+}
+.hexagon:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid red;
+}
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid red;
+}
+	
+	.star-4 {
+	width: 0;
+	height: 0;
+	border-left: 54px solid transparent;
+	border-right: 54px solid transparent;
+	border-bottom: 108px solid blue;
+	position: relative;
+	top: -240px;
+	left: 200px;
+}
+.star-4:after {
+	width: 0;
+	height: 0;
+	border-left: 54px solid transparent;
+	border-right: 54px solid transparent;
+	border-top: 108px solid blue;
+	position: absolute;
+	content: "";
+	top: 30px;
+	left: -56px;
+}
