@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays</title>
+</head>
+<body>
+	<script>
+var names = ['Ricky','Bobby','Will','Ferrel']
+ 
+ names.forEach(function (element, index, array) {
+ 	console.log(' The name at the index ' + index + ' is: ' 
+ 		+ element);
+ })
+
+ var names = ['Ricky','Bobby','Will','Ferrel'];
+ console.log(names.length);
+ for(var i = 0; i < names.length; i +=1) {
+ 	console.log(names[i]);
+ }
+
+ function iterateNames(element, index, array) {
+console.log('Index ' + index + ' : ' 	+ element);
+ }
+ names.forEach(iterateNames);
+
+
+var tacos = ['picadollo', ' lengua', ' barbacoa', ' guacamole'];
+
+tacos.forEach(function (taco, index, array) {
+	if (index > 0) {
+		console.log(' The last taco i ate was a ' + array[index - 1]);
+	}
+	console.log('I am eating a ' + taco + ' taco');
+	if(index < array.length -1) {
+		console.log('I will eat a ' + array[index + 1] + ' taco next');
+	}
+});
+
+var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+
+shapes.forEach(function (shape, index, array) {
+   if (index > 0) {
+   		console.log(' I destroyed a ' + array[index - 1] + ' shape previously');
+   }
+		console.log('I am destroying a ' + shape + ' shape currently');
+  
+   if (index < array.length -1) {
+   		console.log(' I will destroy a ' + array[index + 1] + 'shape next');
+   }
+    
+});
+
+
+</script>
+</body>
+</html>

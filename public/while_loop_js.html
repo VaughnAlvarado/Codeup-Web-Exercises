@@ -5,25 +5,141 @@
 </head>
 <body>
 	<script>
-	
-var random = Math.floor((Math.random()*10)+1);
-console.log(random);
-var response3 = prompt('Guess a number 1-10')
-console.log(response3);
-while(response3 != random) {
-	
-	if(response3 > random) {
-		alert('Too high!');
-	}else if(response3 < random) {
-		alert('Too Low');
+
+
+		function getRandomNumber() {
+			var rand = Math.floor((Math.random() * 50) + 1);
+			return rand;
+		}
+		function playAgain() {
+			var answer = confirm(' Do you want to play again?')
+			return answer;
+		}
+		function getGuess() {
+			var guess = prompt(' Please enter your guess number 1 and 50');
+				return guess;
+		}
+		function isValidGuess(guess) {
+			 var parsedGuess = parseInt(guess);
+
+			 //if parsedGuess is not a number than it returns false
+			 if (isNaN(parsedGuess)) {
+			 	return false;
+			 } else {
+			 	return true;
+			 }
+		}
+		function getValidGuess() {
+			do {
+				var guess = getGuess();
+
+			} while (isValidGuess(guess) == false);
+
+			return guess;
+		}
+
+		function playGame() {
+			var random = getRandomNumber();
+			console.log(random);
+			
+			var i = 4;
+		do {
+
+			var guess = getValidGuess();
+
+			if(guess == random) {
+				alert('You did it!');	
+			} else if (guess > random) {
+				alert('Too HIGH! ' + i + ' guesses left');
+			} else if (guess < random) {
+				alert('Too low ' + i + ' guesses left');
+			} 
+
+			i -= 1;
+
+		} while (random != guess && i != -1);
 	}
-	response3 = prompt('Guess a number 1-10');
-	console.log(response3);
-		} 
 
-alert('You Are Correct!!');
+	do{
+		playGame();
+
+		var replay = playAgain();
+
+	} while(replay);
+
+//<---- hi low game------------->>
+//  do{
+// var random = Math.floor((Math.random()*10)+1);
+// console.log(random);
+// var response3 = prompt('Guess a number 1-10')
+// console.log(response3);
+
+// var guesses = 3;
+
+// while(response3 != random && guesses > 0) {
+	
+// 	if(response3 > random) {
+// 		alert('Too high!' + guesses + ' guesses left');
+// 	}else if(response3 < random) {
+// 		alert('Too Low ' + guesses + ' guesses left');
+// 	}
+// 	guesses--;
+// 	response3 = prompt('Guess a number 1-10');
+// 	console.log(response3);
+// } 
+
+// if(response3 == random){
+// 	alert('You Are Correct!!');
+// }
+// var confirmed
+// confirmed = confirm('Play Again?')
+// console.log(confirmed);
+// }while (confirmed ==true);
 
 
+//<---Shape game--------------->
+// do{
+// var response = prompt('Pick a Shape to calculate')
+// console.log(response)
+// if (response == 'rectangle') {
+// 	var rectLength = prompt('Rectangle Length?');
+// 	var rectWidth = prompt('Rectangle Width?');
+
+// 	function areaOfRectangle(length, width) {
+//        var message = length * width;
+//        return (message)
+//     }
+//     alert(areaOfRectangle (rectLength, rectWidth));
+// }
+// else if (response == 'triangle') {
+// 	var triHeight = prompt('Triangle Height?');
+// 	var triBase = prompt('Triangle Base?');
+
+// 	function areaOfTriangle(height, base) {
+//        var message = (height * base) /2;
+//        return (message)
+//     }
+//     alert(areaOfTriangle (triHeight, triBase));
+// }
+// else if (response == 'circle') {
+// 	var circle = prompt('Circle Radius?');
+
+// 	function areaOfCircle(radius) {
+//        var message = (Math.PI) * (Math.pow(radius,2));
+//        return (message)
+//     }
+//     alert(areaOfCircle (circle));
+// }
+
+
+// var confirmed
+// confirmed = confirm('Would You Like To Pick Another Shape?')
+// console.log(confirmed);
+// }while (confirmed == true);
+
+
+
+//<-------extra-------------------->
 //random = //
 //do{}
 	//response()
@@ -33,6 +149,7 @@ alert('You Are Correct!!');
 //}else {
 	// response= alert('please make sure its a number')
 //}
+
 
 
 
