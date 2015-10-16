@@ -15,31 +15,7 @@ function sayHello() {
 
 	console.log(global)
 }
-(function() {
- function areaOfRectangle(length, width) {
-       return length * width;
-    }
-	function areaOfTriangle(height, base) {
-		return (height * base) /2;
-	}	
- 	function areaOfCircle(radius) {
- 		return (Math.PI) * (Math.pow(radius,2));
- 	}
- 	function perimeterOfCircle(radius) {
- 		return (2 * 3.14 * radius)
- 	}
- 	function areaOfTrapezoid(base1, base2, height) {
- 		return ((base1 + base2) * height) /2
- 	}
- 	function areaOfEquilateral(side) {
- 		return (Math.sqrt(3)) * (Math.pow(side,2)) /4 * (6);
- 	}
- 	function areaOfHexagon(side) {
- 		return (3* Math.sqrt(3)) * (Math.pow(side,2)) /2
- 	}
- 	function areaOfStar(side) {
- 		return areaOfEquilateral(side) + areaOfHexagon(side);
- 	}
+
  })();
 </script>
 </body>

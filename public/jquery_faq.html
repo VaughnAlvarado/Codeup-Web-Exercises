@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise</title>
+	<style> .invisible {
+			display:none;
+		}
+		</style>
+</head>
+<body>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+// 	$(document).ready(function() {
+// 		event.preventDefault();
+//          $('#toggle-park').click(function(event) {
+//                 $('.parklist').toggleClass('invisible')
+// 	});
+// });
+// 	$(document).ready(function() {
+//          $('dt').click(function(event) {
+//                 $(this).next('dd').toggleClass('invisible')
+// 	});
+// });
+	$(document).ready(function() {
+		$('.question').click(function() {
+			$('.question-toggle').toggle();
+		})
+		$('li').click(function() {
+			$(this).next('li').parent().hide();
+		})
+	})
+
+
+// 	$('ul').each(function(index) {
+// 		$(this).children().first().css('font-weight', 'bold')
+// 		$('li:first-child').css('font-weight', 'bold')
+// 	})
+// 	$(document).ready(function() {
+//          $('li').each(function(index) {
+//          	switch(index % 4) {
+// 	   	      	case 0:
+// 	   	      		$(this).css('font-weight', 'bold');
+// 	   	      		break;
+// 	   		}
+// 	});
+// });
+// 	$(document).ready(function() {
+// 		$('li').click(function(event) {
+//     		$(this).next('li').parent().toggleClass('invisible')
+//     	});
+//     });
+</script>
+
+<!-- <h1>National Park Service</h1>
+<dl class = 'parklist invisible'>
+  <dt>How many employees?</dt>
+  <dd>Permanent, temporary, and seasonal:<br> Approximately 22,000 diverse professionals
+Volunteers in Parks: 221,000</dd>
+  <dt>How long has the park service been around?</dt>
+  <dd>Since 1872</dd>
+  <dt>What is the largest park site?</dt>
+  <dd>Wrangell-St. Elias National Park and Preserve</dd>
+  <dt>What is the smallest park site</dt>
+  <dd>Thaddeus Kosciuszko National Memorial</dd>
+  <dt>What is the Nation Park Service budget?</dt>
+  <dd>2.98 Billion$</dd>
+  <dt>How do  get a park pass?</dt>
+  <dd>You can get one at your nearest park site</dd>
+  <dt>How many people visit the parks</dt>
+  <dd>Total recreation visitors to the national parks in 2014: 292,800,082</dd>
+  <dt>Why does the NPS use the arrowhead?</dt>
+  <dd>They were inspired by stuff</dd>
+  <dt>What kind of animals are there?</dt>
+  <dd>Alot of kinds</dd>
+  <dt>Do they have beverages?</dt>
+  <dd>Yes</dd>
+</dl> -->
+<h1 class = 'question'>National Park Service</h1>
+<dl class = 'question-toggle'>
+  <dt>How many employees?</dt>
+  <dd>Permanent, temporary, and seasonal:<br> Approximately 22,000 diverse professionals
+Volunteers in Parks: 221,000</dd>
+  <dt>How long has the park service been around?</dt>
+  <dd>Since 1872</dd>
+  <dt>What is the largest park site?</dt>
+  <dd>Wrangell-St. Elias National Park and Preserve</dd>
+  <dt>What is the smallest park site</dt>
+  <dd>Thaddeus Kosciuszko National Memorial</dd>
+  <dt>What is the Nation Park Service budget?</dt>
+  <dd>2.98 Billion$</dd>
+  <dt>How do  get a park pass?</dt>
+  <dd>You can get one at your nearest park site</dd>
+  <dt>How many people visit the parks</dt>
+  <dd>Total recreation visitors to the national parks in 2014: 292,800,082</dd>
+  <d>Why does the NPS use the arrowhead?</dt>
+  <dd>They were inspired by stuff</dd>
+  <dt>What kind of animals are there?</dt>
+  <dd>Alot of kinds</dd>
+  <dt>Do they have beverages?</dt>
+  <dd>Yes</dd>
+</dl>
+
+ <!-- <button id="toggle-park">Click to toggle the invisiblity.</button> -->
+
+ <h3 class = 'hide-captain'>YellowStone Park</h3>
+ <ul class = 'hide-this'>
+<li>They have animals</li>
+<li>They have animals you can eat</li>
+<li>They do not sell tacos</li>
+<li>You cannot bring unlicensed guns here</li>
+</ul>
+<h3 class = 'hide-captain'>Central Park</h3>
+ <ul class = 'hide-this'>
+<li>They have animals</li>
+<li>They have animals you can eat</li>
+<li>They do not sell tacos</li>
+<li>You cannot bring unlicensed guns here</li>
+</ul>
+<h3 class = 'hide-captain'>Hyde Park</h3>
+ <ul class = 'hide-this'>
+<li>They have animals</li>
+<li>They have animals you can eat</li>
+<li>They do not sell tacos</li>
+<li>You cannot bring unlicensed guns here</li>
+</ul>
+</body>
+</html>

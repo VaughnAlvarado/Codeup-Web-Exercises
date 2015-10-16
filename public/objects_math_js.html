@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math</title>
+</head>
+<body>
+	<h1>Math objects Exercise!</h1>
+	<script>
+
+		var circle = {
+			radius: 3,
+			getArea: function() {
+				return (Math.PI) * (Math.pow(this.radius,2))
+		},
+			getPeri: function() {
+			 	return (2 * 3.14 * this.radius)
+		},
+	 		getInfo: function(round) {
+		var message = ' Area with a circle of radius ' + this.radius + ' is ';
+		
+		if(round === true) {
+			console.log(message + Math.round(this.getArea()));
+		} else {
+			console.log(message + this.getArea());
+		}	
+	}
+
+};
+
+
+circle.getInfo(false);
+circle.getInfo(true);
+
+	circle.radius = 5;
+
+
+circle.getInfo(false);
+circle.getInfo(true);
+
+console.log('Circle with a radius of ' + circle.radius + ' the circumference would be ' + circle.getPeri())
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

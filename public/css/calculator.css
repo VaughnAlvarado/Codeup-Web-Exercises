@@ -1,0 +1,114 @@
+.box  
+{  
+background-color:black;  
+height:360px;  
+width:250px;  
+border-radius:15px; 
+background-position: center; 
+position:relative;  
+}  
+ button {
+ 	margin-top:8px;
+	color:white;
+	border-radius:10px;
+	font-family: sans-serif;
+	font-weight: bold;
+	width:45px;
+	height:45px;
+	position:relative;
+}
+  .operator {
+  	background-image: url(/img/button1.jpg);
+	background-repeat: no-repeat;
+	background-size: 55px;
+	transition-duration: .5s;
+    transition-timing-function: linear;
+	background-position: center;
+  }
+  .operator:hover {
+  	background-image: url(/img/operators.jpg);
+	background-repeat: no-repeat;
+	background-size: 70px;
+	border-radius:50%;
+  }
+  .number {
+  	background-image: url(/img/button.gif);
+	background-repeat: no-repeat;
+	background-size: 55px;
+	transition-duration: .5s;
+    transition-timing-function: linear;
+	background-position: center;
+  }
+  .number:hover {
+    background: red;
+    border-radius: 50%;
+  }
+  #equal {
+  	background-image: url(/img/enter.jpeg);
+	background-repeat: no-repeat;
+	background-size: 52px;
+	transition-duration: .5s;
+    transition-timing-function: linear;
+	background-position: center;
+  }
+  #equal:hover {
+  	background: green;
+	border-radius: 50%;
+  }
+  #clear {
+  	background-image: url(/img/delete.jpg);
+	background-repeat: no-repeat;
+	background-size: 50px;
+	transition-duration: .5s;
+    transition-timing-function: linear;
+	background-position: center;
+  }
+  #clear:hover {
+  	background-image: url(/img/delete1.jpeg);
+	background-repeat: no-repeat;
+	background-size: 50px;
+	border-radius: 50%;
+  }
+  input {
+  	border-radius: 5px;
+
+  }
+.box2 {  
+background-color:#3d4543;  
+height:10px;  
+width:250px;  
+border-radius:1px;  
+position:relative;  
+}  
+.display  
+{  
+background-color:blue;  
+width:220px;  
+border-radius:15px;
+background-image: url(/img/background.jpeg);
+background-repeat: repeat;
+background-size: 250px;
+position:relative;  
+left:15px;  
+top:10px;  
+height:330px;  
+}  
+.display input  
+{  
+position:relative;  
+left:2px;  
+top:2px;  
+height:35px;  
+color:white;  
+background-color:black;  
+font-size:21px;  
+text-align:right; 
+transition-duration: .5s;
+transition-timing-function: linear; 
+}  
+.display input:hover {
+	background-image: url(/img/eyes.png);
+	background-repeat: repeat;
+	background-size: 100px;
+}
+

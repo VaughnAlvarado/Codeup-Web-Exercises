@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="css/calculator.css">
+
+    </head>
+    <body>
+        <h1>Calculator</h1>
+            
+                    <br>
+                     <div class = 'box'>
+                            <div class = 'display'>
+                        <input id ='firstNumber' type ='text' readonly size = '5'/>
+                        <input id ='operand' type ='text' readonly size = '3' />
+                        <input id ='secondNumber' type ='text' readonly size = '5' />
+                        <br>
+                        <button class='number' data-number = '1' > 1 </button>
+                        <button class='number' data-number = '2' > 2 </button>
+                        <button class='number' data-number = '3' > 3 </button>
+                        <button class='operator' data-operator = '+' > + </button>
+                        <br>
+                        <button class='number' data-number = '4' > 4 </button>
+                        <button class='number' data-number = '5' > 5 </button>
+                        <button class='number' data-number = '6' > 6 </button>
+                        <button class='operator' data-operator = '-' > - </button>
+                        <br>
+                        <button class='number' data-number = '7' > 7 </button>
+                        <button class='number' data-number = '8' > 8 </button>
+                        <button class='number' data-number = '9' > 9 </button>
+                        <button class='operator' data-operator = '*' > x </button>
+                        <br>   
+                        <button class='number'  data-number = "0" > 0 </button>
+                        <button class='operator' data-operator = '^' > ^ </button>
+                        <button class='number' data-number = "." > . </button> 
+                        <button class='operator'  data-operator = "/" > / </button>
+                        <br>
+                        <button class='operator' data-operator = '√' > √ </button>
+                        <button id='converter' data-converter = 'Bin' > Bin </button>
+                        <button id='clear'  data-clear = "c" > c </button>
+                        <button id='equal'  data-equal = "=" > = </button>
+                    </div>
+                </div>
+            
+                        <br>
+
+    </body>
+</div>
+    <script>
+        var operator = null;
+        var btnNumberArray = document.getElementsByClassName('number');
+        var btnOperatorArray = document.getElementsByClassName('operator');
+
+        for (var i = 0; i < btnNumberArray.length; i +=1) {
+            btnNumberArray[i].addEventListener('click',getNumber,false);
+        }
+        for (var i = 0; i < btnOperatorArray.length; i +=1) {
+            btnOperatorArray[i].addEventListener('click',getOperator,false);
+        }
+        function getNumber(event) {
+            var attribute = this.getAttribute('data-number');
+            if(operator == null){
+                document.getElementById("firstNumber").value += attribute;
+            }
+            else{
+                document.getElementById("secondNumber").value += attribute;
+            }
+            var valid = '.0123456789';
+            var decimal = attribute.indexOf('data-number')
+            console.log(decimal)
+        }
+        function getOperator(event){
+            operator = this.getAttribute('data-operator');
+            document.getElementById("operand").value = operator;
+        }
+        document.getElementById('clear').addEventListener('click',clearDisplay,false)
+        function clearDisplay(){
+            document.getElementById("firstNumber").value = '';
+            document.getElementById("operand").value = '';
+            document.getElementById("secondNumber").value = '';
+            operator = null;  
+        }  
+        document.getElementById('equal').addEventListener('click',equalTo,false)
+        function equalTo() {
+            equal = this.getAttribute('data-equal')
+           var first = document.getElementById("firstNumber").value;
+           var second = document.getElementById("secondNumber").value;
+           var result = 0;
+           first = parseFloat(first);
+           second = parseFloat(second);
+           var operand = document.getElementById("operand").value;
+            if (operand == '+') {
+                result = (first) + (second);
+           } else if (operand == '-') {
+                result = (first) - (second);
+           } else if (operand == '/') {
+                result = (first) / (second);
+           } else if (operand == '*') {
+                result = (first) * (second);
+           } else if (operand == '^') {
+                result = (Math.pow(first,second));
+           } else if (operand == '√') {
+                result = (Math.sqrt(first))
+           } else {
+                result == null;
+           } 
+           console.log(result)
+           clearDisplay()
+           document.getElementById("firstNumber").value = result;
+       }
+       document.getElementById('equal').addEventListener('click',convertBin,false)
+       function convertBin() {
+        var firstBin = document.getElementById("firstNumber").value;
+        var oddOrEven = (firstBin % 2 == 0) ? true: false;
+        var result = 0 
+        var remainder = firstBin /2 
+         if (firstBin % 2 == true) {
+            result == remainder
+        } else if (firstBin % 2 == false) {
+            result == remainder
+        }
+        document.getElementById('secondNumber').value = result;
+       }
+       
+        
+
+    </script>
+</html>

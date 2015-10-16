@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objects intro</title>
+</head>
+<body>
+<script>
+
+		// var person = {};
+
+		// person['first-Name'] = 'Will';
+		// person.lastName = 'Bobby';
+
+		// person.sayHello = function(msg) {
+		// 	this.msg = msg;
+
+		// 	console.log(this['first-Name'] + ' ' + this.lastName + ' says "' + msg + '"');
+		// };
+
+
+
+		// var car = {};
+		// car.make = "Nissan";
+		// car.model = "Gtr";
+
+		// car.myVehicle = function(msg) {
+		// 	this.msg = msg;
+		// 	console.log(this.make + ' is the make ' + this.model + ' is the car "' + msg + '"');
+		// };
+
+	// var students = [{
+	// 			firstName: "Vaughn",
+	// 			lastName: "Alvarado",
+	// 			sayHello: function(msg) {
+	// 				console.log(this.firstName + ' ' + this.lastName + ' says "' + msg + '"');
+	// 		},
+	// 		grades: [
+	// 		100, 98, 90, 96, 100, 76, 88, 100
+	// 		]
+	// 	}, {
+	// 			firstName: "Taco",
+	// 			lastName: "Man",
+	// 			sayHello: function(msg) {
+	// 				console.log(this.firstName + ' ' + this.lastName + ' says "' + msg + '"');
+	// 		},
+	// 		grades: [
+	// 		100, 98, 90, 96, 100, 76, 88, 100
+	// 		]
+	// 	}];
+
+
+
+	// todo:
+// Create an array of objects that represent books.
+// Each book should have a title and an author.
+// The book author should be an object with a firstName and lastName.
+// Be creative and add at least 5 books to the array
+// var books = [todo];
+
+
+var bookNames = function(book, index, array) {
+
+	console.log('Book is named '  + book.title) 
+	console.log(' Wrote by' + book.author.authorFirstName + '' + book.author.authorLastName);
+	console.log(' Pages ' + book.pages)
+	console.log('(*)(*)(*)(*)(*)(*)(*)(*)(*)')
+};	
+var books = [{
+
+	title:" Moby Dick",
+	author: {
+		authorFirstName:" Moby",
+		authorLastName:" Dick",
+		},
+	pages: 1495
+}, {
+	title:" Hunger Games",
+	author: {
+		authorFirstName:" Taco",
+		authorLastName:" Woman",
+		},
+	pages: 1590
+}, {
+	title:" Starving Games",
+	author: {
+		authorFirstName:" Taco",
+		authorLastName:" Man",
+		},
+	pages: 2300
+}, {
+	title:" Taco Games",
+	author: {
+		authorFirstName:" Taco",
+		authorLastName:" Baby",
+		},
+	
+	pages: 3000
+}, {
+	title:" Taco Games Part 2",
+	author: {
+		authorFirstName:" Taco",
+		authorLastName:" BabyMan",
+		},
+	
+	pages: 3500
+
+}];
+
+books.forEach(bookNames);
+
+
+
+		// var books = [
+		// {
+		// 	"title": "The Fault In our Stars",
+		// 	"author": {
+		// 		"firstName": "John",
+		// 		"lastName": "Green",
+		// 	},
+		// 	"pages": 12465,
+		// }, {
+
+		// ];
+		// books.forEach(function(book, index))
+
+
+		// // todo:
+		// // Loop through the array of books using .forEach and print out the specified information about each one.
+		// // start loop here
+		
+
+		// end loop here
+
+
+		</script>
+		</body>
+		</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<style>
+		.codeup {
+			text-align: center;
+		}
+		</style>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#codeup4').click(function(e) {
+		var text = $(this).text();
+		$('#codeup4').removeClass('active')
+		$(this).addClass('active');
+
+		$('#codeup').text(text);
+	});
+});
+
+// ________Click Functions
+
+	// $('#codeup2').dblclick(function() {
+	// 	console.log('H1 with an id "codeup2" was clicked');
+	// });
+	// $('.para').dblclick(function() {
+	// 	$(this).css('font-size', '18px')
+	// });
+	// $('#codeup3').hover(
+	// 	  function() {
+	// 		$(this).css('background-color', 'blue')
+	// 	  },
+	// 	  function() {
+	// 	  	$(this).css('background-color', 'silver')
+	// 	  }
+	//  );
+	// $('.codeup').hover(function() {
+	// 	$(this).css('font-size', '2em').css('font-weight', 'bold').css('background-color', 'red');
+	// }, function() {
+	// 	$(this).css({
+	// 		"font-size": "1em",
+	// 		"font-weight": "normal",
+	// 		"color": "white",
+	// 		"background-color": "white",
+	// 	});
+	// });
+// <_________ Class selectors jquery
+// $(document).ready(function() {
+// 	$('.codeup').css('background-color', 'red');
+// 	$('#header,.codeupList, .codeupPara').css('border', '4px ridge').css('border-color', 'yellow');
+// 	$('p').css('font-size', '14px');
+// 	$('li').css('font-size', '20px');
+// 	$('li, p , h1').css('color', 'blue');
+// 	var header = $('#header').html();
+// 	alert(header);
+// })
+</script>
+<h1 id = 'codeup'>Hello Hamptons</h1>
+<h1 id = 'codeup2'>Hello other codeup people!</h1>
+<p class = 'para'>i am not a real paragrph i am not a real paragrph i am not a real paragrph i am not a real paragrph i am not a real paragrph</p>
+<h1 id = 'codeup3'> Hello other people</h1>
+<ul id = 'codeup4' class='container'>
+		<li>I am number 1</li>
+		<li>I am number 2</li>
+		<li>I am number 3</li>
+</ul>
+<p>please type into this form</p>
+<form>
+<input type = 'text' id = 'textfield' name = 'textfield' placeholder= 'Type Here'/>
+</form>
+
+<!-- <___________Class selectors jquery -->
+		<!-- <h1 id = 'header'>Example Page</h1>
+		<div class = 'codeup'>
+			<h3>Notice</h3>
+			<p>This is a very important message</p>
+		</div>
+		<ul class = 'codeup'>
+			<li>I am number 1</li>
+			<li>I am number 2</li>
+			<li>I am number 3</li>
+		</ul>
+		<div class = 'not-important'>
+			<h2>This is not important!</h2>
+			<p>This is also not an <span class = 'codeupPara'>important message!!</p>
+		</div>
+			<p class = 'codeupPara'>This is also a very important message for you</p>
+ -->
+
+
+</body>
+</html>

@@ -6,16 +6,7 @@
 
 
 
-function areaOfRectangle(length, width) {
-       var area = 10 * 5;
-       return area;
-    console.log('test');
-}
-var rectangleArea = areaOfRectangle(10,5);
-console.log(rectangleArea);
 
-var secondArea = areaOfRectangle(30, 3);
-console.log(secondArea);
 
 
 //function isEven(input) {
@@ -37,3 +28,17 @@ function sum(a, b) {
 }
 
 console.log(sum(100, 500));
+
+
+function defuseTheBOM()
+        {
+
+        }
+
+        // Don't modify anything below this line!
+        //
+        // This causes the defuseTheBOM() function to be called
+        // when the "defuser" button is clicked.
+        // We will learn about events in the DOM lessons
+        var defuser = document.getElementById('defuser');
+        defuser.addEventListener('click', defuseTheBOM, false);

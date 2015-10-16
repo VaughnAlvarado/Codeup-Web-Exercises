@@ -1,0 +1,3 @@
+var marker = new google.maps.Marker({
+    position: homeslice,
+    map: map

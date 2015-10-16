@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+    <h1 id="main-header">Calculator</h1>
+    <ul>
+        <li data-dbid="1">Item 1</li>
+        <li data-dbid="2">Item 2</li>
+        <li data-dbid="3">Item 3</li>
+        <li data-dbid="4">Item 4</li>
+        <li data-dbid="5">Item 5</li>
+    </ul>
+    <h2 id="sub-header">Hello Again.</h2>
+    <p class="sub-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+<button id="btn1" data-value='10'>Javascript Is Cool!</button>
+<button id="btn2">Turn me Blue!</button>
+<button id="btn3">Change your table!</button>
+<button id="btn4">Accomplish the mission!</button>
+    <script>
+        "use strict";
+
+
+
+
+
+
+        (function() {
+
+
+        // add event listener to btn1
+       
+
+            // TODO: Uncomment next line and get the main header element by id
+            var listener = function (event) {
+             var mainHeader = document.getElementById('main-header');
+                console.log(this.getAttribute('data-value'));
+                 mainHeader.innerHTML = 'Javascript is So Cool!'
+                console.log(mainHeader.innerHTML);
+            }
+
+            var listener2 = function (event) {
+                var subHeader = document.getElementById('sub-header');
+                console.log(subHeader.innerHTML);
+                    subHeader.style.color = 'blue';   
+            }
+
+            // TODO: Uncomment the next line and get all list items
+            var listener3 = function (event) {
+             var listItems = document.getElementsByTagName('li');
+                 console.log(listItems.innerHTML);
+
+             for (var i = 0; i < listItems.length; i++) {
+                if (i % 2 ==0) {
+                 listItems[i].style.color = 'grey';
+                }
+                var dbId = listItems[i].getAttribute("data-dbid");
+                if (dbId == 1) {
+                    listItems[i].style.color = 'blue'       
+              }
+            }
+        }
+
+           var listener4 = function (event) {
+             var subParagraph = document.getElementsByClassName('sub-paragraph')
+             console.log(subParagraph.innerHTML);
+
+             subParagraph[0].innerHTML = 'Mission has been accomplished'
+         }
+
+     document.getElementById('btn1').addEventListener('click', listener, false);
+     document.getElementById('btn2').addEventListener('click', listener2, false);
+     document.getElementById('btn3').addEventListener('click', listener3, false);
+     document.getElementById('btn4').addEventListener('click', listener4, false);
+
+        })();
+
+
+
+
+
+
+
+            // var mainHeader = document.getElementById('main-header');
+            //     mainHeader.innerHTML = ' Javascript Sucks';
+
+            // var subHeader = document.getElementById('sub-header');
+            //     subHeader.innerHTML = 'Javascripts sucks again';
+
+          
+
+
+            // var listItem = document.getElementsByTagName('li');
+            // console.log(listItem.innerHTML);
+
+            //     for (var i = 0; i < listItem.length; i+=1) {
+            //         if (i % 2 == 0) {
+            //          listItem[i].style.color = 'blue';
+            //     };
+            //         if (listItem[i].getAttribute("data-dbid") == 1) {
+            //             listItem[i].style.color = 'purple'
+            //      };
+            //     };
+            // var paragraph = document.getElementsByClassName('sub-paragraph');
+            //     console.log(paragraph.innerHTML);
+
+            //     paragraph[0].innerHTML = 'Mission has been succeeded';
+
+
+    </script>
+</body>
+</html>

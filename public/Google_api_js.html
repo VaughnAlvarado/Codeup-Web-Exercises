@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJihYm6RCBaCZyjt1rxNZivzc2JXVjqS0"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    (function() {
+        "use strict";
+
+        var address = "1415 S Congress Ave Austin,TX 78704";
+
+        // Init geocoder object
+        var geocoder = new google.maps.Geocoder();
+
+
+        // Geocode our address
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+           if (status == google.maps.GeocoderStatus.OK) {
+
+               // Recenter the map over the address
+               map.setCenter(results[0].geometry.location);
+           } else {
+
+               // Show an error message with the status if our request fails
+               alert("Geocoding was not successful - STATUS: " + status);
+           }
+        });
+        var favRestaurants = [{
+
+            Name:'Homeslice'
+            Address: '1415 S Congress Ave, Austin, TX 78704';
+            latlong: { lat: 30.249230, lng: -97.749517};
+            content:'Serving great pizza, one slice at a time!'
+         {
+            Name:'Fredas'
+            Address: '10903 Pecan Park Blvd, Austin, TX 78750';
+            latlong: { lat: 30.464393, lng: -97.803510};
+            content:'Great lobster bisque!'     
+        }, {
+            Name:'Via 313'
+            Address: '1111 E 6th St, Austin, TX 78702';
+            latlong: {lat: 30.264264, lng: - 97.730753}
+            content:'Authentic detroit style pizza!'
+        }
+        }]
+        favRestaurants.forEach(function (Element, Index, Array) {
+
+        })
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 20,
+
+            // This sets the center of the map at our location
+            center: {
+                lat: 30.249323,
+                lng: -97.749518
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        
+        
+        var infowindow = new google.maps.InfoWindow({
+            content: favRestaurants[]
+        });
+        var marker= new google.maps.Marker({
+            position: favRestaurants[]
+            map: map
+        });
+        infowindow.open(map, marker);
+        
+    })();
+    </script>
+</body>
