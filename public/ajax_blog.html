@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+   	<link rel="stylesheet" href="css/blog.css">  
+</head>
+<body>
+	<button id='refresh'> Refresh </button>
+	<div class='codeup'>
+		<img src='/img/codeup-arrow.png'>
+	</div>
+	<div class='container'>
+		<div class="jumbotron">
+	    	<h1>Blog of Vaughn</h1>
+			<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			 	<p><a class="btn btn-lg btn-success" href="#" role="button"><span class="glyphicon glyphicon-thumbs-up"></span> Like my blog</a></p>
+	  	</div>
+	  </div>
+	<div id='box'>
+		 <div class='row'>
+		  	<div class='col-md-3'>
+		  		<div class = 'post'>
+		  			<div class = 'mini'>
+			      		<h3>Here is another mini blog of Vaughn</h3>
+		  			</div>
+		  		</div>
+		  	</div>
+		  <div class = 'col-md-6'>
+			 	<div id="posts">
+		            <h1>Blog of Vaughn</h1>
+		        </div>
+		  	</div>
+		    <div class = 'col-md-3'>
+		    	<div class='mini'>
+		  			<h3>Here is a cool mini blog of Vaughn</h3>
+		  		</div>
+		  	</div>
+		  </div>
+		<div class='row'>
+		  	<div class = 'col-md-4'>
+		 		<div class='miniPost'>
+		  			<h3>Here is another mini blog of Vaughn</h3>
+		  		</div>
+		  	</div>
+		<div class = 'col-md-4 col-md-push-4'>
+		 		<div class='miniPost'>
+		  			<h3>Here is another mini blog of Vaughn</h3>
+		  		</div>
+		  	</div>
+		</div>
+	</div>
+		<div class='row'>
+			<div class='col-md-1 col-md-push'>
+				<div class="Switch Off">
+					<div class="Toggle"></div>
+					<span class="On">ON</span>
+					<span class="Off">OFF</span>
+				</div>
+			</div>
+		</div>
+		<!-- // -->
+		<div style="margin: 50px 0px;"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		"use strict" 
+		$.get("/data/blog.json").done(function(data) {
+			console.log(data);
+			data.forEach(function(element) {
+				var rowHtml = "<div>";
+	    			rowHtml += "<h1>" + element.title + "</h1>";
+	    			rowHtml += "<p>" + element.posts + "</p>";
+	    			rowHtml += "<p>" + element.categories.join(', ') + "</p>";
+	    			rowHtml += "<p>" + element.date + "</p>";	
+    			rowHtml += "</div>";
+       			$('#posts').append(rowHtml);
+       			var otherHTML = '<p>' + element.date + '</p>';
+       			$('.mini').append(otherHTML)
+       			var otherTaco = '<p>' + element.posts + '</p>';
+       			$('.miniPost').append(otherTaco)
+			});
+		});
+		$('#refresh').click(function() {
+       	 $("#posts").html('');
+       	 $.get("/data/blog.json").done(function(data) {
+			console.log(data);
+			data.forEach(function(element) {
+				var rowHtml = "<div>";
+	    			rowHtml += "<h1>" + element.title + "</h1>";
+	    			rowHtml += "<p>" + element.posts + "</p>";
+	    			rowHtml += "<p>" + element.categories.join(', ') + "</p>";
+	    			rowHtml += "<p>" + element.date + "</p>";	
+    			rowHtml += "</div>";
+       			$('#posts').append(rowHtml);
+			});
+		});
+       });
+
+		$('.Switch').click(function() {
+			$(this).toggleClass('On').toggleClass('Off');
+
+			if ($(this).hasClass('On')) {
+				$('#box').hide();
+			} else {
+				$('#box').show();
+			}	
+			
+		});
+	});
+</script>
+
+</body>
+</html>

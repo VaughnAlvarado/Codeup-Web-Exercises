@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="/JS/moment.min.js"></script>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+   	<link rel="stylesheet" href="css/weather.css"> 
+   	
+   	 <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+	<h2>Search Lat/Lon</h2>
+	<p>
+		<label for="lat"></label>
+		<input id="lat" name="lat" type="text" placeholder="Enter Latitude" autofocus>
+		<label for="long"></label>
+		<input id="long" name="long" type="text" placeholder="Enter Longitude" autofocus>
+		<button id="btn-enter" type="Enter">Enter Coordinates!</button>
+	</p>
+	<h2>Search Address</h2>
+	<p>
+	<label for="address"></label>
+	<input id="address" name="address" type="text" placeholder="Enter Address" autofocus>
+	<button id="btn-addy" type="Enter">Enter Address!</button>
+	</p>
+
+	<div class="container">
+	<h1>Weather App</h1>
+		<h3>San Antonio</h3>
+		<div class='row'>
+			<div class='col-md-4'>
+				<div id='dayOne' class="forecast-day"></div>
+			</div>
+			<div class='col-md-4'>
+				<div id='dayTwo' class="forecast-day"></div>
+			</div>
+			<div class='col-md-4'>
+				<div id='dayThree' class="forecast-day"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="map-canvas"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJihYm6RCBaCZyjt1rxNZivzc2JXVjqS0"></script>
+    <script type="text/javascript">
+
+	$(document).ready(function() {
+	function refresh(lat,lon) {
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+		    APPID: "a176ccc7db3cf5afb2a91432f2e2a00b",
+		    lat:lat ,
+		    lon:lon,
+		    units: "imperial"
+		}).done(function(data) {
+	  		for(var i =0; i <= 2; i++) {
+	 			var date = data.list[i].dt * 1000
+	 			var m = moment(date);
+	 			var realDate = "<h2> Day: " + m.format("M/D") + "</h2>"
+				var tempHi = "<h4> <strong> Temp High: </strong>" + Math.round(data.list[i].temp.max) + "</h4>";
+				var tempLo = "<h4> <strong> Temp Lo: </strong>" + Math.round(data.list[i].temp.min) + "</h4>";
+				var icon = '<img src = http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png>' 
+				var weather = "<h4> <em> Clouds: </em>" + data.list[i].weather[0].description + "</h4>"
+				var humidity = "<h4> <em> Humidity: </em>" + data.list[i].humidity + "% </h4>"
+				var rain = "<h4> <em> Chance of rain: </em>" + data.list[i].rain + "</h4>"
+				var string = "<p>" + realDate + tempHi + tempLo + icon + weather + humidity + rain + "</p>"
+				$('.forecast-day').eq(i).html(string)
+			}
+		});
+	}
+
+	$('#btn-enter').click(function() {
+		$('.forecast-day').html('');
+		 var lati = $("#lat").val();
+		 var longi = $("#long").val();
+		refresh(lati, longi);
+	});
+
+	refresh(29.423017, -98.48527);
+    	function geoCoding() {
+        var address = document.getElementById("address").value;
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({ "address": address }, function(results, status) {
+           if (status == google.maps.GeocoderStatus.OK) {
+               map.setCenter(results[0].geometry.location);
+               map.setZoom(14);
+               var markerNew = new google.maps.Marker({
+            	position:(results[0].geometry.location),
+            	map: map,
+            	draggable:true 
+        	   });
+               var newlat = results[0].geometry.location.lat();
+               var newlon = results[0].geometry.location.lng();
+   			   refresh(newlat,newlon);
+           } else {
+
+               alert("Geocoding was not successful - STATUS: " + status);
+           }
+        });
+    }
+		       $('#btn-addy').click(function() {
+		    	geoCoding();
+		    });   	   
+
+       
+        var mapOptions = {
+            
+            zoom: 10,
+
+           
+            center: {
+                lat: 29.426130,
+                lng: -98.496590
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        
+
+});
+       
+
+
+
+
+	</script>
+</body>
+</html>

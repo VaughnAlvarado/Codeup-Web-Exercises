@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tool Store</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+   	<link rel="stylesheet" href="css/tool.css">  
+</head>
+<body>
+	<body>
+
+<h1>My Tool Store</h1>
+<button id = 'refresh'> Refresh </button>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts">
+    	
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function() {
+	 $(document).ready(function() {
+        "use strict";
+       $.get("/data/inventory.json").done(function(data) {
+       		console.log(data);
+       		data.forEach(function(item) {
+       			var rowHtml = "<tr>";
+	    			rowHtml += "<td>" + item.title + "</td>";
+	    			rowHtml += "<td>" + item.quantity + "</td>";
+	    			rowHtml += "<td>" + item.price + "</td>";
+	    			rowHtml += "<td>" + item.categories.join(', ') + "</td>";	
+    			rowHtml += "</tr>";
+
+       			$('#insertProducts').append(rowHtml);
+       		})
+		});
+       $('#refresh').click(function() {
+       	 $("#insertProducts").html('');
+       	 $.get("/data/inventory.json").done(function(data) {
+       		console.log(data);
+       		data.forEach(function(item) {
+       			var rowHtml = "<tr>";
+	    			rowHtml += "<td>" + item.title + "</td>";
+	    			rowHtml += "<td>" + item.quantity + "</td>";
+	    			rowHtml += "<td>" + item.price + "</td>";
+	    			rowHtml += "<td>" + item.categories.join(', ') + "</td>";	
+    			rowHtml += "</tr>";
+
+       			$('#insertProducts').append(rowHtml);
+       		})
+		});
+       })
+    });
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+</body>
+</html>

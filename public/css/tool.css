@@ -1,0 +1,26 @@
+ table {
+ 	border:5px groove;
+ 	background-color: tan;
+ }
+  tr {
+  	border:2px groove;
+  	font-size:150%;
+  }
+  th {
+  	border:2px groove;
+  }
+  td {
+  	font-family: fantasy;
+  	font-weight: bold;
+  	border:2px groove;
+  }
+  body {
+  	background-image: url(/img/tool.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+  h1 {
+  	font-weight: bold;
+  	font-size: 550%;
+  	color:white;
+  }

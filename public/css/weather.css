@@ -1,0 +1,16 @@
+ .row {
+ 	border:6px groove;
+ 	border-right-width:20px;
+ 	border-left-width: 20px;
+ 	margin-right:370px; 
+ 	background-image: url(/img/weather.jpeg);
+ 	background-size: 300px;
+ 	background-repeat: repeat;
+ 	color:black;
+ }
+  #dayOne {
+ 	border-right:1px solid;
+ }
+  #dayTwo {
+ 	border-right:1px solid;
+ }

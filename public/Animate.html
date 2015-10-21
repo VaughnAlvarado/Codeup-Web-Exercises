@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://app.codeup.com/content/examples/html/animate_exercise.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Animate</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0;
+        }
+
+        #btn-animate {
+            margin: 15px;
+        }
+
+        #animate-box {
+            background-color: #000033;
+            height: 250px;
+            margin: 15px;
+            position: relative;
+            width: 250px;
+        }
+        .squarething{
+            background-image:url(/img/blackops.png);
+            background-size: 450px
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            animation: square-to-circle 2s .5s cubic-bezier(1,.015,.295,1.225) alternate;
+        }
+ 
+        @keyframes square-to-circle {
+          0%  {
+            border-radius:0 0 0 0;
+            background-image:url(/img/blackops.png);
+            background-size: 250px
+            transform:rotate(0deg);
+          }
+          25%  {
+            border-radius:50% 0 0 0;
+            background-image:url(/img/blackops.png);
+            background-size: 250px
+            transform:rotate(45deg);
+          }
+          50%  {
+            border-radius:50% 50% 0 0;
+            background-image:url(/img/blackops.png);
+            background-size: 250px
+            transform:rotate(90deg);
+          }
+          75%  { 
+            border-radius:50% 50% 50% 0;
+            background-image:url(/img/blackops.png);
+            background-size: 250px
+            transform:rotate(135deg);
+          }
+          100% {  
+            border-radius:50%;
+            background-image:url(/img/blackops.png);
+            background-size: 250px
+            transform:rotate(180deg);
+          }
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button id="btn-move">Move It</button>
+        <button id="btn-scale">Scale It</button>
+        <button id="btn-hide">Hide It</button>
+        <button id="btn-show">Show It</button>
+        <button id="btn-all">Animate All</button>
+    </p>
+
+    <div id="animate-box"></div>
+
+    <script src="./Animate_files/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        "use strict";
+        $('#btn-move').click(function() {
+        $('#animate-box').animate( {
+            left:'+=50px',
+            top:'+=100px'
+        }, 1000, function(){
+            $('#animate-box').addClass('circle')
+            $('#animate-box').addClass('squarething')
+        });
+    });
+        $(document).ready(function() {
+            $("#btn-scale").click(function() {
+                $('#animate-box').animate({
+                  width:'+=5%'
+                  },1000)
+            });
+            $("#btn-hide").click(function() {
+                $('#animate-box').fadeOut()
+            });
+            $("#btn-show").click(function() {
+                $('#animate-box').fadeIn()
+            });
+            $('#btn-all').click(function() {
+                $('#animate-box').animate({
+                    top:'+=100px',
+                    left:'+=100px'
+                },1000).animate({
+                    width:'+=100px'
+                },1000).animate({
+                    top:'+=50px'
+                },1000).fadeOut()
+                $('#animate-box').animate({
+                    left:'+=500px'
+                },500).fadeIn()
+            })
+        });
+        // TODO: "Move It" should move the box 100 pixels to the left
+
+        // TODO: "Scale It" should expand the box width by 50%
+
+        // TODO: "Hide It" should use opacity to make the box invisible
+
+        // TODO: "Show It" should make the box appear
+
+        // TODO: "Animate All" should use an animation stack to:
+        //      1) Move and scale the box simultaneously
+        //      2) Hide the box
+        //      3) Reset the box back to its original position and opacity
+    });
+    </script>
+
+
+<div id="window-resizer-tooltip" style="display: block;"><a href="http://app.codeup.com/content/examples/html/animate_exercise.html#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1440</span> x <span class="tooltipHeight" id="winHeight">900</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1440</span> x <span class="tooltipHeight" id="vpHeight">784</span></div></body></html>
