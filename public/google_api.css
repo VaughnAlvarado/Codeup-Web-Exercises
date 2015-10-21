@@ -1,3 +1,6 @@
-var marker = new google.maps.Marker({
-    position: homeslice,
-    map: map
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: coral;
+  animation: square-to-circle 2s .5s infinite cubic-bezier(1,.015,.295,1.225) alternate;
+}

@@ -10,31 +10,36 @@
 <body>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
+
+// <_-------------------defined list invisible
 // 	$(document).ready(function() {
 // 		event.preventDefault();
 //          $('#toggle-park').click(function(event) {
 //                 $('.parklist').toggleClass('invisible')
 // 	});
 // });
-// 	$(document).ready(function() {
-//          $('dt').click(function(event) {
-//                 $(this).next('dd').toggleClass('invisible')
-// 	});
-// });
+	$(document).ready(function() {
+         $('dt').click(function(event) {
+                $(this).next('dd').fadeToggle()
+	});
+});
+// <_------------------toggle/hide/show
 	$(document).ready(function() {
 		$('.question').click(function() {
-			$('.question-toggle').toggle();
+			$('.question-toggle').slideToggle();
 		})
 		$('li').click(function() {
-			$(this).next('li').parent().hide();
+			$(this).next('li').parent().slideUp();
+		})
+		$('.hide-captain').click(function() {
+			$('.hide-this').slideDown();  //fadeIn //fadeOut
 		})
 	})
 
 
-// 	$('ul').each(function(index) {
-// 		$(this).children().first().css('font-weight', 'bold')
-// 		$('li:first-child').css('font-weight', 'bold')
-// 	})
+	// $('ul').each(function(index) {
+	// 	$(this).children().first().css('font-weight', 'bold')
+	
 // 	$(document).ready(function() {
 //          $('li').each(function(index) {
 //          	switch(index % 4) {
@@ -44,11 +49,16 @@
 // 	   		}
 // 	});
 // });
-// 	$(document).ready(function() {
-// 		$('li').click(function(event) {
-//     		$(this).next('li').parent().toggleClass('invisible')
-//     	});
-//     });
+// <_--------------------parent click events
+	// $(document).ready(function() {
+	// 	$('li').click(function(event) {
+ //    		$(this).next('li').parent().addClass('invisible')
+ //    	});
+	// 	$('h3').click(function(event) {
+ //    		$('li').parent().removeClass('invisible')
+ //    	});
+ //    	$('li:first-child').css('font-weight', 'bold')
+ //    });
 </script>
 
 <!-- <h1>National Park Service</h1>
