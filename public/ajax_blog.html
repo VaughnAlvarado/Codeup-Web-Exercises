@@ -67,6 +67,7 @@
 <script>
 	$(document).ready(function() {
 		"use strict" 
+		
 		$.get("/data/blog.json").done(function(data) {
 			console.log(data);
 			data.forEach(function(element) {
