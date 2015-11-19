@@ -1,32 +1,28 @@
 <?php 
-$a = 5;
-$b = 10;
-$c = '10';
+ $a = 5;
+ $b = 10;
+ $c = '10';
 
 if ($a < $b) {
 	echo "$a is less than $b\n";
+} else {
+	echo "$b is less than $a\n";
 }
-if ($b > $a) {
-	echo "$b is greater than $a\n";
-}
-if ($b >= $c) {
-	echo "$b is greater than or equal to $c\n";
-}
-if ($b <= $c) {
-	echo "$c is greater or equal to $b\n";
-}
-if ($b == $c) {
-	echo "$b is equal to  $c\n";
-}
-if ($b === $c) {
-	echo "$b is identical to  $c\n";
-}
-if ($b != $c) {
-	echo "$b is not equal to $c\n";
-}
-if ($b !== $c) {
-	echo "$b is not identical to $c\n";
-}
+ echo $a < $b ? "$a is less than $b" : "$b is less than $a\n";
 
+if ($b >= $c) {
+     echo "$b is greater than or equal to $c\n";
+ } else {
+     echo "$b is NOT greater than or equal to $c\n";
+ }
+ echo $b >= $c ? "$b is greater than or equal to $c" : "$c is greater\n";
+
+if ($b === $c) {
+     echo "$b is identical to $c";
+ } else if ($b == $c) {
+     echo "$b is equal to $c";
+ } else {
+     echo "$b is not identical or equal to $c";
+ } 
 
 ?>

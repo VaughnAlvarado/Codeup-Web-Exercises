@@ -1,0 +1,38 @@
+<?php 
+$nouns = [
+	"meat",
+	"tacos",
+	"burritos",
+	"hot sauce",
+	"babies",
+	"baby food",
+	"beans",
+	"rice",
+	"tortillas",
+	"bean"
+];
+$adjectives = [
+	"plain",
+	"wide-eyed",
+	"colossal",
+	"inferior",
+	"creepy",
+	"substantial",
+	"worthy",
+	"touchy",
+	"massive",
+	"salty"
+];
+$randomNoun = array_rand($nouns);
+$randomAdjective = array_rand($adjectives);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of Server-Names</title>
+</head>
+<body>
+	<h1><?php "$randomAdjective . $randomNoun" ?></h1>
+
+</body>
+</html>

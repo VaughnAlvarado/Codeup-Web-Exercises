@@ -1,0 +1,13 @@
+
+#servername {
+	background-color: black;
+	color:white;
+	margin:0 auto; 
+	width: 200px;
+}
+.center-stuff {
+	text-align: center;
+}
+.gameover {
+	background-color: red;
+}
