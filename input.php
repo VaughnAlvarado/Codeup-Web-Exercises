@@ -23,7 +23,7 @@ class Input
      */
     public static function get($key, $default = null)
     {
-        return self::has($key) ? $_REQUEST[$key] : NULL;
+        return self::has($key) ? $_REQUEST[$key] : $default;
     }
 
     ///////////////////////////////////////////////////////////////////////////

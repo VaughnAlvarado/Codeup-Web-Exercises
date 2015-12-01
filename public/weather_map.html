@@ -4,6 +4,7 @@
 	<title>Weather</title>
 	c
 	<script src="/JS/moment.min.js"></script>
+	    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
    	<link rel="stylesheet" href="css/weather.css"> 
    	
@@ -102,7 +103,7 @@
 	           if (status == google.maps.GeocoderStatus.OK) {
 	               map.setCenter(results[0].geometry.location);
 	               map.setZoom(14);
-	               markerChange(results[0].geometry.location);
+	               // markerChange(results[0].geometry.location);
 	               var newlat = results[0].geometry.location.lat();
 	               var newlon = results[0].geometry.location.lng();
 	   			   weatherRefresh(newlat,newlon);
@@ -111,21 +112,21 @@
 	           }
 	        });
 	    }
-    	function markerChange(latlon) {
-    		markerNew = new google.maps.Marker({
-            	position:(latlon),
-            	map: map,
-            	draggable:true 
-        	   });
-    	}
+  //   	function markerChange(latlon) {
+  //   		markerNew = new google.maps.Marker({
+  //           	position:(latlon),
+  //           	map: map,
+  //           	draggable:true 
+  //       	   });
+  //   	}
     	
-		google.maps.event.addListener(markerChange,'dragend',function() {
-				$('.forecast-day').html('');
-        		var latLng = marker.geoCoding();
-        		var lati = latlon.lat();
-        		var longi = latlon.lng();
-        		weatherRefresh(lati,longi)
-        	});
+		// google.maps.event.addListener(markerChange,'dragend',function() {
+		// 		$('.forecast-day').html('');
+  //       		var latLng = marker.geoCoding();
+  //       		var lati = latlon.lat();
+  //       		var longi = latlon.lng();
+  //       		weatherRefresh(lati,longi)
+  //       	});
     	weatherRefresh(29.423017, -98.48527);
     	
        	$('#btn-addy').click(function() {

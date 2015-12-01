@@ -4,6 +4,7 @@ require '../../input.php';
 session_start();
 $sessionId = session_id();
 
+
 if (Auth::check()) {
 	header("Location: /php/authorized.php");
 	die();
@@ -16,8 +17,8 @@ if (Auth::attempt($username,$password)) {
 	header("Location: /php/authorized.php");
 	die();
 } else if ($username !== null && $password !== null) {
-	$loginFail = false;
-}
+	$loginFail = true;
+} 
 $_SESSION['IS_LOGGED_IN'] = false;
 ?>
 <!DOCTYPE html>
@@ -26,7 +27,7 @@ $_SESSION['IS_LOGGED_IN'] = false;
     <title>POST Example</title>
 </head>
 <body>
-	<?php if ($loginFail === false): ?>
+	<?php if (!$loginFail): ?>
 		<h3>Input Info:</h3>
 	<?php else: ?>
 		<h1>Login Failed...Try Again</h1>

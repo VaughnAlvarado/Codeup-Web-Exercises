@@ -1,11 +1,11 @@
 <?php
 require '../../auth.php'; 
 session_start();
-var_dump($_SESSION['username']);
 if (!Auth::check()) {
 	header("Location: /php/login.php");
 	die();
 } else {
+	var_dump(Auth::user());
 	$username = Auth::user();
 }
 ?>

@@ -1,9 +1,9 @@
 <?php
-require_once '../../log.php';
+require_once 'log.php';
 class Auth 
 {
 	
-	public static $loginFail = false;
+	public static $logFail = false;
 	public static $hashed_password = '$2y$10$SLjwBwdOVvnMgWxvTI4Gb.YVcmDlPTpQystHMO2Kfyi/DS8rgA0Fm';
 	public static $logger;
 
@@ -24,7 +24,6 @@ class Auth
 			$logger->logInfo("User $username logged in");
 			return true;
 		} else {
-			var_dump($username);
 			$logger->logError("User $username invalid info!");
 			return false;
 		}
@@ -39,9 +38,9 @@ class Auth
 	}
 	public static function user() 
 	{
-		if (isset($_SESSION['username'])) 
+		if (isset($_SESSION['IS_LOGGED_IN'])) 
 		{
-			return $_SESSION['username'];
+			return $_SESSION['IS_LOGGED_IN'];
 		} 
 	}
 	public static function logOut() 
