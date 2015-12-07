@@ -16,7 +16,7 @@ $table = 'CREATE TABLE IF NOT EXISTS national_parks (
 		name VARCHAR(50) NOT NULL,
 		location VARCHAR(75) NOT NULL,
 		date_established DATE NOT NULL,
-		area_in_acres DOUBLE NOT NULL,
+		area_in_acres FLOAT(10,2) NOT NULL,
 		PRIMARY KEY (id)
 	)';
 $dbc->exec($table);

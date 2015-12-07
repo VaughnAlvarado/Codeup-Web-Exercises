@@ -9,7 +9,7 @@ $delete = 'TRUNCATE national_parks';
 $dbc->exec($delete);
 
 $tableInfo = [
-	['name' => 'Acadia', 'location' => 'Maine', 'date_established' => '1919-26-02', 'area_in_acres' => '47389.67'],
+	['name' => 'Acadia', 'location' => 'Maine', 'date_established' => '1919-02-26', 'area_in_acres' => '47389.67'],
 	['name' => 'Arches', 'location' => 'Utah', 'date_established' => '1929-04-12', 'area_in_acres' => '76518.98'],
 	['name' => 'Big Bend', 'location' => 'Texas', 'date_established' => '1944-06-12', 'area_in_acres' => '801163.21'],
 	['name' => 'Bryce Canyon', 'location' => 'Utah', 'date_established' => '1928-02-25', 'area_in_acres' => '35835.08'],
@@ -23,7 +23,12 @@ $tableInfo = [
 
 foreach ($tableInfo as $info) {
     $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres) 
-    VALUES ('{$info['name']}', '{$info['location']}', '{$info['date_established']}', '{$info['area_in_acres']}')";
+    VALUES (
+    	'{$info['name']}', 
+    	'{$info['location']}', 
+    	'{$info['date_established']}', 
+    	'{$info['area_in_acres']}'
+    	)";
 
     $dbc->exec($query);
 
