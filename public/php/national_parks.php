@@ -11,11 +11,18 @@ $limit = 4;
 $maxPages = ceil($count / $limit);
 
 $page = Input::has('page') ? Input::get('page'): 1;
-$page = ($page < 0) ? 1 : $page;
-$page = ($page > $maxPages) ? $page: 1;
-$page = (is_numeric($page)) ? $page : 1;
+if ($page < 0 || 
+	$page > $maxPages) {
+	$page = 1;
+} else {
+	$page;
+}
 // echo $maxPages;
 $offset = ($page - 1) * 4;
+if (Input::has('all')) {
+	$limit = $count;
+	$offset = 0;
+}
 $selectAll = "SELECT * FROM national_parks LIMIT $limit OFFSET $offset";
 $stmt = $dbc->query($selectAll);
 $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -63,22 +70,22 @@ if ($_POST) {
 			<h3>Enter Park Info</h3>
 			<p>
 				Park Name<br>
-				<input id="name" name="name" type="text">
+				<input id="name" class='park_info' name="name" type="text">
 			</p>
 			<p>
 				Location<br>
-				<input id="location" name="location" type="text">
+				<input id="location" class='park_info' name="location" type="text">
 			</p>
 			<p>
 				Area In Acres<br>
-				<input id="area" name="area" type="text">
+				<input id="area" class='park_info' name="area" type="text">
 			</p>
 			<p>
 				Date<br>
-				<input id="date_established" name="date_established" type="text">
+				<input id="date_established" class='park_info' name="date_established" type="text">
 			</p>
 			<p>
-				<button type="Submit">Enter Park Info!</button>
+				<button type="Submit" class='park_info'>Enter Park Info!</button>
 			</p>
 		</form>
 		<table class ='col-md-12'>
@@ -104,7 +111,9 @@ if ($_POST) {
 	 	<?php if ($page < 3) { ?>
 			<a class = 'btn-primary btn-lg'href="/php/national_parks.php?page=<?= $page + 1 ?>"> Next Page</a>
 		<?php } ?>
-			<!-- <a class = 'btn-success btn-lg'href="/php/national_parks.php?page=<?= $limit  ?>">View All</a> -->
+		<?php if (!Input::has('all')) { ?>
+			<a class = 'btn-success btn-lg'href="/php/national_parks.php?all=true ">View All</a>
+		<?php } ?>
 		 <footer class="footer">
 	      <div class="container">
 	      </div>

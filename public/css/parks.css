@@ -30,7 +30,10 @@
   	height:50px;
   	margin-top:20px;
   }
- p {
+  p {
+  	color:white;
+  }
+  .park_info {
   	color:black;
   }
   h3 {
