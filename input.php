@@ -25,6 +25,32 @@ class Input
     {
         return self::has($key) ? $_REQUEST[$key] : $default;
     }
+    public static function getString($key) 
+    {
+        $trimInput = trim($key);
+         if (!is_string(self::get($trimInput))) {
+            throw new Exception("Please enter a valid input, letters A-Z");
+        } else {
+            return self::get($key);
+        }
+    }
+    public static function getNumber($key) 
+    {
+         if (!is_numeric(self::get($key))) {
+            throw new Exception("Please enter a valid input, numbers 1-9");
+        } else {
+            return self::get($key);
+        }
+    }
+    public static function getDate($key) 
+    {
+        try {
+            $date = new DateTime(self::get($key));
+            return $date;
+        } catch (Exception $e) {
+            throw new Exception("Please enter a valid date");
+        }
+    }
 
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //

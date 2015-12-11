@@ -7,6 +7,7 @@
  th {
  	border: 5px solid;
  	background-color: white;
+  border:5px groove;
  }
   a {
   	padding:10px;
@@ -17,6 +18,9 @@
   }
   body {
   	background-image:url(/img/forest.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
   }
   #header {
   	height:50px;
@@ -30,13 +34,21 @@
   	height:50px;
   	margin-top:20px;
   }
-  p {
-  	color:white;
-  }
+ 
   .park_info {
   	color:black;
   }
   h3 {
   	color:white;
   }
+.errors {
+    background-color: yellow;
+    color:black;
+}
+.errorFinder {
+  background-color: yellow;
+}
+.parkForm {
+  color:white;
+}
 
