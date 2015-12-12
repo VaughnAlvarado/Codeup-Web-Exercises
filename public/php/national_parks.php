@@ -20,18 +20,19 @@ if ($page < 0 ||
 // echo $maxPages;
 $offset = ($page - 1) * 4;
 if (Input::has('all')) {
-	$limit = $count;
+	$limit = (int)$count;
 	$offset = 0;
 }
 $selectAll = "SELECT * FROM national_parks LIMIT :limiter OFFSET :offset";
+
 $stmt = $dbc->prepare($selectAll);
-$stmt->bindValue(':limiter',$limit, PDO::PARAM_INT);
-$stmt->bindValue(':offset',$offset, PDO::PARAM_INT);
+$stmt->bindValue(':limiter', $limit,  PDO::PARAM_INT);
+$stmt->bindValue(':offset',  $offset, PDO::PARAM_INT);
 $stmt->execute();
 
-$stmt = $dbc->query($selectAll);
 $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $errors = [];
+$maxDate = date('Y-m-d');
 
 
 if (!empty($_POST)) {
@@ -51,7 +52,7 @@ if (!empty($_POST)) {
 		$errors['area'] = $e->getMessage();
 	}
 	try {
-		$dateTimeObject = Input::getDate('date_established');
+		$dateTimeObject = Input::getDate('date_established', new DateTime('1700-01-01'), new DateTime());
 	} catch (Exception $e) {
 		$errors['date_established'] = $e->getMessage();
 	}
@@ -101,19 +102,23 @@ $findError = 'errorFinder';
 			<h3>Enter Park Info</h3>
 			<p>
 				<p class='parkForm'>Park Name<br></p>
-				<input id="name" class='<?= !empty($errors['name'])? $findError : '' ?>' name="name" type="text" value='<?= isset($_POST['name']) && empty($errors['name'])? $_POST['name']: ''?>'>
+				<input id="name" class='<?= !empty($errors['name'])? $findError : '' ?>'
+				 name="name" type="text" value='<?= isset($_POST['name']) && empty($errors['name'])? $_POST['name']: ''?>'>
 			</p>
 			<p>
 				<p class='parkForm'>Location<br></p>
-				<input id="location" class='<?= !empty($errors['location'])? $findError : '' ?>' name="location" type="text"value='<?= isset($_POST['location']) && empty($errors['location'])? $_POST['location']: ''?>'>
+				<input id="location" class='<?= !empty($errors['location'])? $findError : '' ?>'
+				 name="location" type="text"value='<?= isset($_POST['location']) && empty($errors['location'])? $_POST['location']: ''?>'>
 			</p>
 			<p>
 				<p class='parkForm'>Area In Acres<br></p>
-				<input id="area" class='<?= !empty($errors['area'])? $findError : '' ?>' name="area" type="text" value='<?= isset($_POST['area']) && empty($errors['area'])? $_POST['area']: ''?>'>
+				<input id="area" class='<?= !empty($errors['area'])? $findError : '' ?>'
+				 name="area" type="text" value='<?= isset($_POST['area']) && empty($errors['area'])? $_POST['area']: ''?>'>
 			</p>
 			<p>
 				<p class='parkForm'>Date<br></p>
-				<input id="date_established" class='<?= !empty($errors['date_established'])? $findError : '' ?>' name="date_established" type="text" value='<?= isset($_POST['date_established']) && empty($errors['date_established'])? $_POST['date_established']: ''?>'>
+				<input id="date_established" class='<?= !empty($errors['date_established'])? $findError : '' ?>'
+				 name="date_established" type="text" value='<?= isset($_POST['date_established']) && empty($errors['date_established'])? $_POST['date_established']: ''?>'>
 			</p>
 			<p>
 				<button type="Submit" class='park_info'>Enter Park Info!</button>

@@ -13,13 +13,16 @@
         $(document).keyup(function(event){
             var masterKey = [38,38,40,40,37,39,37,39,65,66,13];
             var userKey = (event.keyCode);
-            var userAttempt = [];
             console.log(masterKey);
             console.log(userKey);
             if (userKey == masterKey[i]) {
                 i++
-                userAttempt.push(userKey);
-                console.log(userAttempt[i]);
+            } else {
+                i = 0;
+            }
+            if (i == masterKey.length) {
+                alert('You have won!');
+                i = 0;
             }
            
         });
