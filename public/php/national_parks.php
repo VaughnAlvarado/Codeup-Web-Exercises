@@ -43,7 +43,7 @@ if (!empty($_POST)) {
 	}
 	try {
 		$location = Input::getString('location');
-	} catch (Exception $e) {
+	} catch (Exception $e) { 
 		$errors['location'] = $e->getMessage();
 	}
 	try {
