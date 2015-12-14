@@ -1,10 +1,8 @@
 <?php 
+require 'function.php';
 // function pageController() {
 
-	$count = isset($_GET['click']) ?  $_GET['click'] : 0;
-		
-	
-	
+	$count = inputGET('click');
 // }
 // $data = pageController();
 // extract($data);

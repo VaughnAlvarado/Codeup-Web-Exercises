@@ -1,10 +1,9 @@
 <?php
 inputHas($key){
-	return isset($_REQUEST($key)) ? true : false;
+	return isset($_REQUEST[$key]) ? true : false;
 }
 inputGet($key){
-	return $_GET($key);
-}
+	return inputHas($key) ? $_REQUEST[$key] : NULL);
 escape($input){
-	return $input
+	return htmlspecialchars(strip_tags($input));
 }

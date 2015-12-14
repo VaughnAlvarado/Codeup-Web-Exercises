@@ -1,7 +1,7 @@
 <?php
 function pageController() {
-	$confirmedPingSwing = isset($_GET['click']) ?  $_GET['click'] : 0;
-	$confirmedPongSwing = isset($_GET['click']) ?  $_GET['click'] : 0;
+	$confirmedPingSwing = Input::get('click');
+	$confirmedPongSwing = Input::get('click');
 	$random = mt_rand(0, 100);
 	return [
 		'random' => $random,
