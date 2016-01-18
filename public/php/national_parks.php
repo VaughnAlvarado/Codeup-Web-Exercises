@@ -3,9 +3,9 @@ require_once '../../config.php';
 require_once '../../db_connect.php';
 require_once '../../input.php';
 
-
-$countAll = "SELECT count(*) FROM national_parks";
-$stmt = $dbc->query($countAll);
+$countAll = "SELECT count(*) FROM national_parks"; 
+$stmt = $dbc->prepare($countAll);
+$stmt->execute();
 $count = $stmt->fetchColumn();
 $limit = 4;
 $maxPages = ceil($count / $limit);
@@ -71,8 +71,6 @@ if (!empty($_POST)) {
 			$stmt->execute();
 	}
 }
-$findError = 'errorFinder';
-
 
 
 

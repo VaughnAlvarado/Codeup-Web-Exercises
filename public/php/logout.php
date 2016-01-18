@@ -1,5 +1,5 @@
 <?php
-require 'auth.php';
+require_once '../../auth.php';
 session_start();
 Auth::logout();
 endSession();
