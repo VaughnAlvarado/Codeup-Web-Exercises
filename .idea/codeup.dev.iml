@@ -8,9 +8,11 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/WordTest/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/CodeChallenges/composer.phar/" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/WordTest/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/CodeChallenges/composer.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
