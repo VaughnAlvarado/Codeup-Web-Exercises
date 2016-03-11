@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html ng-app="moduleName">
+<html ng-app="angularTest">
 <head>
     <meta charset="utf-8">
     <title>Bootstrap an Angular Module</title>
 </head>
 <body>
-	<p>This is working</p>
-    <script type="text/javascript" src="/js/angular.min.js"></script>
-    <script type="text/javascript" src="/js/moduleName.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angularTest.js"></script>
+	<ul>
+    	<li ng-repeat="num in [1,2,3,4,5,6,7,8,9,10]" ng-if="num % 2 == 0">{{ num }} is even </li>
+	</ul>
+	<ul>
+    <li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" ng-if="num % 2 == 0"> {{ num }} is even! </li>
+</ul>
 </body>
 </html>
