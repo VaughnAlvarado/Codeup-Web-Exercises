@@ -210,35 +210,6 @@
 	top: 8px;
 	left: -12px;
 }	
-
-#hexagon {
-	width: 100px;
-	height: 55px;
-	background: red;
-	position: relative;
-}
-.hexagon:before {
-	content: "";
-	position: absolute;
-	top: -25px;
-	left: 0;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-bottom: 25px solid red;
-}
-.hexagon:after {
-	content: "";
-	position: absolute;
-	bottom: -25px;
-	left: 0;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 25px solid red;
-}
 	
 	.star-4 {
 	width: 0;
@@ -250,14 +221,111 @@
 	top: -240px;
 	left: 200px;
 }
-.star-4:after {
+.star-5 {
 	width: 0;
 	height: 0;
 	border-left: 54px solid transparent;
 	border-right: 54px solid transparent;
 	border-top: 108px solid blue;
-	position: absolute;
+	position: relative;
 	content: "";
 	top: 30px;
-	left: -56px;
+	left: -54px;
+}
+
+.hexagon {
+  position: relative;
+  width: 50px; 
+  height: 28.87px;
+  background-color: white;
+  margin: 14.43px 0;
+  transform: rotate(-90deg);  
+  top:-97px;
+  left:-25px;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 14.43px solid white;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 14.43px solid white;
+}
+.small-star-1 {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 15px 8px;
+	border-color: transparent transparent white transparent;
+	position:relative;
+	top:-177px;
+	left:-7.5px;
+}
+.small-star-2 {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 15px 8px;
+	border-color: transparent transparent white transparent;
+	position:relative;
+	transform: rotate(-60deg);  
+	top:-173px;
+	left:-40px;
+}
+.small-star-3 {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 15px 8px;
+	border-color: transparent transparent white transparent;
+	position:relative;
+	transform: rotate(60deg);  
+	top:-187px;
+	left:26px;
+}
+.small-star-4 {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 15px 8px;
+	border-color: transparent transparent white transparent;
+	position:relative;
+	transform: rotate(180deg);  
+	top:-134px;
+	left:-6.8px;
+}
+
+.small-star-5 {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 15px 8px;
+	border-color: transparent transparent white transparent;
+	position:relative;
+	transform: rotate(-122deg);  
+	top:-165px;
+	left:-42px;
+}
+.small-star-6 {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 8px 15px 8px;
+	border-color: transparent transparent white transparent;
+	position:relative;
+	transform: rotate(120deg);  
+	top:-180px;
+	left:27px;
 }
